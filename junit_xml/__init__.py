@@ -148,6 +148,8 @@ class TestSuite(object):
             test_suite_attributes["log"] = decode(self.log, encoding)
         if self.url:
             test_suite_attributes["url"] = decode(self.url, encoding)
+        if self.id:
+            test_suite_attributes["id"] = decode(self.id, encoding)
 
         xml_element = ET.Element("testsuite", test_suite_attributes)
 
@@ -191,6 +193,8 @@ class TestSuite(object):
                 test_case_attributes["line"] = decode(case.line, encoding)
             if case.log:
                 test_case_attributes["log"] = decode(case.log, encoding)
+            if case.id:
+                test_case_attributes["id"] = decode(case.id, encoding)
             if case.url:
                 test_case_attributes["url"] = decode(case.url, encoding)
 
@@ -380,6 +384,7 @@ class TestCase(object):
         log=None,
         url=None,
         allow_multiple_subelements=False,
+        id=None
     ):
         self.name = name
         self.assertions = assertions
