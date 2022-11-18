@@ -399,6 +399,7 @@ class TestCase(object):
         self.url = url
         self.stdout = stdout
         self.stderr = stderr
+        self.id = id
 
         self.is_enabled = True
         self.errors = []
